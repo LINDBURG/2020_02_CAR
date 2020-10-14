@@ -1,0 +1,23 @@
+import torch
+import torch.nn as nn
+
+epoch = 2000
+learning_rate = 1e-4
+model = Car_Model(asdf)
+
+criterion = nn.MSELoss(reduction='sum')
+optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=momentum_rate)
+
+
+for t in range(epoch):
+    y_pred = model(data)
+
+    loss = criterion(y_pred, label)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+    if t % 100 == 99:
+        print(t, loss.item())
+
